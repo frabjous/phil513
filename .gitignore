@@ -1,0 +1,12 @@
+20*/
+hw*/
+emails.sh
+*.synctex.gz
+*.out
+*.log
+*.aux
+*.idx
+*.ind
+*.ilg
+*.thm
+*.pdf
