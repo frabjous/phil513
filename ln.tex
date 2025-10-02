@@ -1733,20 +1733,23 @@ Give proof schemata for the derived rules for disjunctive syllogism (``DS''). Hi
 φ &⊢ φ ∨ ψ \tag{Add}\\
 φ &⊢ ψ ∨ φ \tag{Add}\\
 ¬φ &⊢ φ → ψ \tag{FA}\\
+φ → ψ &⊢ ¬ψ → ¬φ \tag{Trans}\\
+¬φ → ¬ψ &⊢ ψ → φ \tag{Trans}\\
 ¬¬φ &⊢ φ \tag{DNE}\\
+&⊢ φ → ¬¬φ \tag{DNITheo}\\
 φ ∨ φ &⊢ φ \tag{Taut}\\
 φ &⊢ φ ∧ φ \tag{Taut}\\
 φ ∧ ψ &⊢ ψ ∧ φ \tag{Com}\\
-φ ∨ ψ &⊢ ψ ∨ φ \tag{Com}
-\end{align*}
-
-\vspace*{-2\baselineskip}\begin{align*}
+φ ∨ ψ &⊢ ψ ∨ φ \tag{Com}\\
 (φ ∨ ψ) ∨ θ &⊢ φ ∨ (ψ ∨ θ) \tag{Assoc}\\
 (φ ∧ ψ) ∧ θ &⊢ φ ∧ (ψ ∧ θ) \tag{Assoc}\\
 φ ∧ (ψ ∨ θ) &⊢ (φ ∧ ψ) ∨ (φ ∧ θ) \tag{Dist}\\
 φ ∨ (ψ ∧ θ) &⊢ (φ ∨ ψ) ∧ (φ ∨ θ) \tag{Dist}\\
 φ → θ, ψ → ξ, φ ∨ ψ &⊢ θ ∨ ξ \tag{CD}\\
-φ → ψ, ¬φ → ψ &⊢ ψ \tag{Inev}\\
+φ → ψ, ¬φ → ψ &⊢ ψ \tag{Inev}
+\end{align*}
+
+\vspace*{-2\baselineskip}\begin{align*}
 φ → ψ, θ → ψ &⊢ (φ ∨ θ) → ψ \tag{Cases}\\
 φ, ¬φ &⊢ ⊥ \tag{Contra}\\
 ⊥  &⊢ φ \tag{Explode}\\
