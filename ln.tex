@@ -1,3 +1,8 @@
+%
+% Notes to self: Maybe switch to intro, elim type rule names?
+% Maybe add monotonicity: If Γ ⊢ φ then for any Δ, Γ ∪ Δ ⊢ φ
+%
+
 \documentclass[12pt]{report}
 
 %  {FOLDON packages
@@ -3079,7 +3084,7 @@ All occurrences of $x$ here are bound.
 \subsection*{Axioms}
 System \textbf{F} is the theory which is the closure of the set containing all specified instances of the following schemata, (NC) and (Ext) (and their universal closures, if φ and ψ contain additional free variables):
 \begin{equation}
-∀x (φ(x) ↔ x ∈\{y : φ(y)\}), \tag{NC}
+∀x (φ(x) ↔ x ∈\{y : φ(y)\}) \tag{NC}
 \end{equation}
 \noindent for all cases in which the variable $y$ is free for $x$ in $φ(x)$.
 \begin{multline}
@@ -3201,9 +3206,9 @@ where $\{y : φ(y)\}$  and $\{z : ψ (z)\}$ do not contain $x$ free.
 
 \smallskip
 
-\noindent$\textbf{F} ⊢ (∃_{1}{x}φ(x)) ↔  (\{x : φ(x)\} ∈1)$ \\
-$\textbf{F} ⊢ (∃_{2}{x}φ(x)) ↔  (\{x : φ(x)\} ∈2)$\\
-$\textbf{F} ⊢ (∃_{3}{x}φ(x)) ↔  (\{x : φ(x)\} ∈3)$
+\noindent$\textbf{F} ⊢ ∃_{1}{x}φ(x) ↔  \mathrm{Card}(\{x : φ(x)\}) = 1$ \\
+$\textbf{F} ⊢ ∃_{2}{x}φ(x) ↔  \mathrm{Card}(\{x : φ(x)\}) = 2$\\
+$\textbf{F} ⊢ ∃_{3}{x}φ(x) ↔  \mathrm{Card}(\{x : φ(x)\}) = 3$
 
 \smallskip
 
