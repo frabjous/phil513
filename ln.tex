@@ -1645,6 +1645,14 @@ After the derivation of $φ$ from $Γ$, concatenate the remaining steps of of th
 
 \noindent This, with the above result $φ ⊢ ¬¬φ$, mean that if we ever have a line φ, we can get its double negation. We could just insert the steps of the derivation schema above. So from now on, we will not bother, and simply treat ``DNI'' as if it were an inference rule. We call this a \defm{derived rule}.
 
+\begin{mt}[Monotonicity]
+If \,$Γ ⊢ φ$ then for any set of sentences $Δ$, it also holds that $Γ ∪ Δ ⊢ ψ$.
+\end{mt}
+
+\begin{proof}
+Because $Γ ⊆ Γ ∪ Δ$, any member of $Γ$ used in the proof from $Γ$ to $φ$ is also available in a proof from $Γ ∪ Δ$ and so the same proof works for it as well.
+\end{proof}
+
 \begin{coro}
 If \,$Γ ⊢ φ_1$ and\,\ldots and \,$Γ ⊢ φ_n$ and $φ_1, \dotsc, φ_n ⊢ ψ$, then $Γ ⊢ ψ$.
 \end{coro}
@@ -1743,7 +1751,9 @@ Give proof schemata for the derived rules for disjunctive syllogism (``DS''). Hi
 ¬¬φ &⊢ φ \tag{DNE}\\
 &⊢ φ → ¬¬φ \tag{DNITheo}\\
 φ ∨ φ &⊢ φ \tag{Taut}\\
-φ &⊢ φ ∧ φ \tag{Taut}\\
+φ &⊢ φ ∧ φ \tag{Taut}
+\end{align*}
+\vspace*{-2\baselineskip}\begin{align*}
 φ ∧ ψ &⊢ ψ ∧ φ \tag{Com}\\
 φ ∨ ψ &⊢ ψ ∨ φ \tag{Com}\\
 (φ ∨ ψ) ∨ θ &⊢ φ ∨ (ψ ∨ θ) \tag{Assoc}\\
@@ -1751,10 +1761,7 @@ Give proof schemata for the derived rules for disjunctive syllogism (``DS''). Hi
 φ ∧ (ψ ∨ θ) &⊢ (φ ∧ ψ) ∨ (φ ∧ θ) \tag{Dist}\\
 φ ∨ (ψ ∧ θ) &⊢ (φ ∨ ψ) ∧ (φ ∨ θ) \tag{Dist}\\
 φ → θ, ψ → ξ, φ ∨ ψ &⊢ θ ∨ ξ \tag{CD}\\
-φ → ψ, ¬φ → ψ &⊢ ψ \tag{Inev}
-\end{align*}
-
-\vspace*{-2\baselineskip}\begin{align*}
+φ → ψ, ¬φ → ψ &⊢ ψ \tag{Inev}\\
 φ → ψ, θ → ψ &⊢ (φ ∨ θ) → ψ \tag{Cases}\\
 φ, ¬φ &⊢ ⊥ \tag{Contra}\\
 ⊥  &⊢ φ \tag{Explode}\\
@@ -3577,6 +3584,25 @@ Induction in the metalanguage again. For the base:
 \end{oproof}
 
 \end{proof}
+
+\noindent That's a lot of object language proofs to get lost in. To summarize the induction step:
+
+\begin{itemize}[itemsep=0pt]
+\item We start with the assumption that for some given number $n$, everything is one of the three things (less than, greater than, same) relative to it.
+\item Let $b$ be an arbitrary number. So $b$ is one of the three things relative to $n$.
+\item Now we need to show that $b$ has to be one of the those three things relative to $n+1$ as well.
+\item We treat each of the three possibilities relative to $n$ as separate cases.
+\item Lines 4--9 deal with $b$ being less than $n$. Then it is also one of the things less than $n+1$ (lines 6--7), and so one of the three things relative to $n+1$.
+\item Lines 5--32 deal with the case when $n$ is less than $b$. If $n$ is less than $b$, then what is $b$ relative to $n+1$?
+\begin{itemize}
+\item $n$ could just be one less than $b$, in which case $b$ \emph{is} $n+1$. This subcase is handled in lines 13--18.
+\item $n$ could more than one less than $b$, in which case $n+1$ is still one of the things less than $b$. This subcase is handled in lines 19--30.
+\item Either way, one of the three options hold.
+\end{itemize}
+
+
+\item Lines 33--36 deal with the case where $b$ is $n$, in which case $b$ is less than $n+1$ (line 35), and so is one of the three relative to $n+1$.
+\end{itemize}
 
 \noindent In \PA, we get not only (Trichotomy) but the object-language quantified version:\[ \PA ⊢ ∀x∀y(y < x ∨ x < y ∨ y=x)\] by doing the induction in the object language instead.
 
