@@ -58,13 +58,13 @@
 
 % hyperref for setting metadata and adding hyperlinks
 \usepackage[pdfauthor={Kevin C. Klement},
-            pdftitle={Lecture notes for Phil 513: Mathematical Logic I},
-            pdfsubject={Logic},
-            colorlinks=true,
-            hyperfootnotes=false,
-            citecolor=black, linkcolor={black!50!blue},
-            pdfkeywords={logic,mathematics,philosophy,metatheory}%
-			]{hyperref}
+  pdftitle={Lecture notes for Phil 513: Mathematical Logic I},
+  pdfsubject={Logic},
+  colorlinks=true,
+  hyperfootnotes=false,
+  citecolor=black, linkcolor={black!50!blue},
+  pdfkeywords={logic,mathematics,philosophy,metatheory}%
+]{hyperref}
 
 % ntheorem for custom theorem environments
 \usepackage[amsmath,hyperref,framed,thmmarks]{ntheorem}
@@ -1044,7 +1044,7 @@ The notion of a variable assignment $s$ in interpretation \,$\M$ \defm{satisfyin
 
 \textup{I.e., an assignment satisfies a conditional iff it does not satisfy the antecedent, or does satisfy the consequent.}
 
-\item If φ is of the form $ψ ↔ θ$, then $\M, s ⊨ φ$ iff either both $\M, s ⊨ ψ$ and $\M, s ⊨ θ$ or both  $\M, s ⊭ ψ$ and $\M, s ⊭ θ$.
+\item If φ is of the form $ψ ↔ θ$, then $\M, s ⊨ φ$ iff either both $\M, s ⊨ ψ$ and $\M, s ⊨ θ$ or both  $\M, s ⊭ ψ$ and $\M, s ⊭ θ$.\label{biconsem}
 
 \textup{I.e., an assignment satisfies a biconditional iff it satisfies either both or neither side.}
 
@@ -2498,7 +2498,7 @@ Now we prove that if $\M ⊨ φ$ then $φ∈Δ$.
 \end{enumerate}
 \end{proof}
 \begin{hw}
-Fill in the argument for cases (c) and (e) above; compare cases (a), (b) and (d) for the general lines of argument. For case (e), you may cite the $↔$-``axioms'' given on p.~\pageref{equiv:axs}, or the derived rules that follow from them (p.~\pageref{equiv:rules}) as needed.
+Fill in the argument for cases (c) and (e) above. Compare cases (a), (b) and (d) for the general lines of argument. For case (e), you may cite the $↔$-``axioms'' given on p.~\pageref{equiv:axs}, or the derived rules that follow from them (p.~\pageref{equiv:rules}) as needed, but do \emph{not} assume that biconditionals are just shorthand for a conjunction of one-way conditionals. On the semantics side, you must appeal to part \ref{biconsem} in the definition of satisfaction on p.~\pageref{biconsem}.
 \end{hw}
 
 \subsection*{Completeness and compactness}
@@ -2517,7 +2517,7 @@ Assume Γ is consistent. By the Lindenbaum Extension Lemma, there is a consisten
 Suppose $Γ$ is satisfiable. By our Consistency result earlier, it must be consistent. Therefore, by Satisfiability, it has a denumerable interpretation as a model.
 \end{proof}
 
-\noindent The suprising thing about this result is that it shows that no matter what kind of interpretation a theory (collection of sentences) is intended to have, if it has any kind of interpretation making it true, it has one of denumerable size. This is very counterinutive if the ``intended'' models quantify over larger infinities, such as a theory for the mathematics of real numbers.
+\noindent The suprising thing about this result is that it shows that no matter what kind of interpretation a theory (collection of sentences) is intended to have, if it has any kind of interpretation making it true, it has one of denumerable size. This is very counterinutive if the ``intended'' models quantify over larger infinities, such as a theory for the mathematics of real numbers, or most set theories.
 
 \phantomsection\label{completeness}\begin{mt}[Completeness]
 If \,Γ ⊨ φ then \,Γ ⊢ φ.
