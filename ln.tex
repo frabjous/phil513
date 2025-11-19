@@ -589,7 +589,6 @@ The book uses these object language symbols:
 
 \medskip\noindent
 
-
 \noindent I assume you are familiar with these.
 
 The language also contains atomic propositional letters $\mathsf{p}_1, \mathsf{p}_2, \dotsc, \mathsf{p}_n, \dotsc, \mathsf{q}_1, \mathsf{q}_2, \dotsc, \mathsf{q}_n, \dotsc$.
@@ -4877,7 +4876,7 @@ w = \Gn{∧}) \text{ and}$
 
 \qquad $(w = \Gn{∀} \text{ or }w = \Gn{∃}) \text{ and }$
 
-\qquad $x = \Gn{w} \smallfrown \Gn{z} \smallfrown \Gn{y} \bigr)$
+\qquad $x = w \smallfrown z \smallfrown y \bigr)$
 
 We can get $\mathrm{Frm}_{\mathcal{L}_A}$ similarly.
 
@@ -4889,7 +4888,7 @@ We can get $\mathrm{Frm}_{\mathcal{L}_A}$ similarly.
 
 \item $\mathrm{Subst}(x,y,z)$: the Gödel number of the formula resulting by replacing all free occurrences of the variable with Gödel number $z$ with the term with Gödel number $y$ in the formula with Gödel number $x$.
 
-\item $\mathrm{UnivClosure}(x)$: the Gödel number of the formula resulting from prepending a universal quantifier of the form $∀y$ to the formula with Gödel number $x$ for every variable it contains free.
+\item $\mathrm{UnivClosure}(x)$: the Gödel number of the formula resulting from prepending a universal quantifier of the form $∀y$ to the formula with Gödel number $x$ for every variable $y$ it contains free.
 
 \item $\mathrm{Neg}(x)$: the Gödel number of the negation of the formula with Gödel number $x$
 
@@ -4953,7 +4952,7 @@ A theory is \defm{recursively axiomatizable} (or sometimes, simply, \defm{axioma
 \Q\ is recursively axiomatizable.
 \end{mt}
 \begin{proof}
-\Q\ is the closure of the set of axioms Q$_1$--Q$_8$, and the property of being the Gödel number of one of these is simply the disjunction of being each one of them, which is primitive recursive:
+\Q\ is the closure of the set of axioms Q$_1$--Q$_8$, and the property of being the Gödel number of one of these is simply the disjunction of being any one of them, which is primitive recursive:
 
 $\mathrm{IsQAx}(x) \text{\ iff\ } $
 
@@ -5289,7 +5288,7 @@ By the definition of a theory, $\tT$ is closed under entailment, and so $φ ∈ 
 
 \noindent This notion of completeness is due to Emil Post, and for me it is tempting to write it as completeness$^\text{Post}$, since there is another sense of completeness used in logic: the sense of \emph{capturing everything valid according to the semantics} at play, sometimes called ``semantic completeness'', or if we like, ``⊨-completeness''.
 
-These aren't the same notion. In some contexts, they're barely related. When we proved that first-order logic with identity is complete in the sense that if $φ$ is identity-valid, then $⊢^= φ$, we certainly weren't proving, or attempting to prove that either $⊢^= φ$ or $⊢^= ¬φ$ for every $φ$. If $φ$ is contingent, neither is, nor should be, true.
+These aren't the same notion. In some contexts, they're barely related. When we proved that first-order logic with identity is complete in the sense that if $φ$ is identity-valid, then $⊢^= φ$, we certainly weren't proving, or attempting to prove, that either $⊢^= φ$ or $⊢^= ¬φ$ for every $φ$. If $φ$ is contingent, neither is, nor should be, true.
 
 However, if the semantics at play is \emph{truth in just one intended interpretation}, such as truth-in-$\smN$, there is more of a connection.
 
